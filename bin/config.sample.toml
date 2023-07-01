@@ -1,0 +1,22 @@
+[environment]
+account = "xxxxx" # Your AWS account ID
+
+[admin]
+#allowIpAddresses = ["0.0.0.0/0"] #Your home/office public IPv4 address, if using a specific IP add /32 like 24.222.174.192/32
+allowIpAddresses = ["xxxxx"]
+
+#Both certificate ARN should create and get through Makefile
+serverCertificateArn = "arn:aws:acm:us-east-1:xxxxxxx:certificate/xxxxxxxxxxxxxxxxxxxxxxxx"
+clientCertificateArn = "arn:aws:acm:us-east-1:xxxxxx:certificate/yyyyyyyyyyyyyyyyyyyyyyyy"
+
+[database]
+username = "wordpress" #Database username
+defaultDatabaseName = "wordpress" #Default database name
+
+[domain]
+domainName = "xxxxxxx.dev" #Your root domain name, usually is the domain name of the created public hosted zone in Route 53
+hostname = "blog.xxxxxxx.dev" #Your desire hostname for the WordPress
+alternativeHostname = ["*.blog.xxxxxx.dev"]
+
+[contact]
+email = ["xxxx@xxxx.com"] #Email address for notify any in-compliance event in AWS Config
